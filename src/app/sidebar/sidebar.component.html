@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <ul>
+            <a>Resource</a>
+        </ul>
+        <ul>
+            <a>Project</a>
+        </ul>
+        <ul>
+            <a>Formula</a>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <img src="{{arrow}}" (click)="sidenav.toggle();change()"/>
+        Main
+    </mat-sidenav-content>
+        
+</mat-sidenav-container>

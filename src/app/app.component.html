@@ -1,0 +1,45 @@
+<app-header name="username">
+    <div class="header">
+        <span class="logo">
+            <img class="image" src="https://i.postimg.cc/vBGYDxZj/We-Chat7e3e0f53f7fe744afc91fa2bee2adf39.png">
+        </span>
+        <b class="project">Project1</b>
+        <img class="profile" src="https://i.postimg.cc/xTFrNfQ6/pngfuel-com.png" [ngbPopover]="popContent" [popoverTitle]="popTitle"> 
+        <!-- <ng-template #popTitle><div class="title">{{name}}<br>Member Since<br>Novenber-2019</div></ng-template> -->
+        <ng-template #popContent>
+            <div class="title">{{username}}<br>Member Since<br>{{joindate}}</div>
+            <div class="content">
+            <button type="button" class="btn btn-outline-dark pro">profile</button>
+            <button type="button" class="btn btn-outline-dark signout">Sign out</button>
+            </div>
+        </ng-template>
+    
+        <b class="name">{{username}}</b>
+        <img class="question" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Icon-round-Question_mark.svg">
+    </div>
+</app-header>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <ul>
+            <span [routerLink]="[ '/resource' ]" routerLinkActive="active">Resource</span>
+        </ul>
+        <ul>
+            <span [routerLink]="[ '/project' ]" routerLinkActive="active">Project</span>
+        </ul>
+        <ul>
+            <span [routerLink]="[ '/formula' ]" routerLinkActive="active">Formula</span>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <img src="{{arrow}}" (click)="sidenav.toggle();change()"/>
+
+        <!-- <button (click)="click()">click</button> -->
+
+        <router-outlet></router-outlet> 
+  
+    </mat-sidenav-content>
+        
+</mat-sidenav-container>
+
+
+
